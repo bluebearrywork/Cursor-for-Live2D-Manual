@@ -161,6 +161,8 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .image-frame img { width: 100%; border-radius: 10px; }
 
 .expression-layout { display: grid; grid-template-columns: minmax(260px, 360px) 1fr; gap: 54px; align-items: start; }
+.expression-reference { margin: -18px 0 40px; }
+.expression-reference .text-link { margin-left: .25em; }
 .phone-figure { position: sticky; top: 100px; padding: 18px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); }
 .phone-figure img { width: 100%; border-radius: 14px; }
 .expression-items { display: grid; gap: 0; }
