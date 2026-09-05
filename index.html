@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#f59b52">
   <title data-i18n="meta.title">Cursor for Live2D · 模型师手册</title>
   <link rel="icon" href="assets/images/app-icon.ico">
-  <link rel="stylesheet" href="assets/styles.css?v=display-modes-2">
-  <script src="assets/i18n.js?v=display-modes-2" defer></script>
-  <script src="assets/app.js?v=display-modes-2" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=section-order">
+  <script src="assets/i18n.js?v=section-order" defer></script>
+  <script src="assets/app.js?v=section-order" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip.link">跳到正文</a>
@@ -47,8 +47,8 @@
           <a href="#settings" data-i18n="toc.settings"><span>02</span>模型设置</a>
           <a href="#expressions" data-i18n="toc.expressions"><span>03</span>按键表情</a>
           <a href="#shortcuts" data-i18n="toc.shortcuts"><span>04</span>软件快捷键</a>
-          <a href="#tutorial" data-i18n="toc.tutorial"><span>05</span>制作方法分享</a>
-          <a href="#display-modes" data-i18n="toc.displayModes"><span>06</span>显示模式</a>
+          <a href="#display-modes" data-i18n="toc.displayModes"><span>05</span>显示模式</a>
+          <a href="#tutorial" data-i18n="toc.tutorial"><span>06</span>制作方法分享</a>
           <a href="#checklist" data-i18n="toc.checklist"><span>07</span>发布前检查</a>
         </nav>
         <div class="sidebar-note">
@@ -189,8 +189,38 @@
         </div>
       </section>
 
+      <section class="manual-section" id="display-modes">
+        <div class="section-heading">
+          <p class="section-number">05 · DISPLAY MODES</p>
+          <h2 data-i18n="modes.heading">覆盖模式与背景模式</h2>
+          <p data-i18n="modes.intro">两种显示模式适用于不同场景：覆盖模式让模型直接显示在桌面最上层，背景模式则便于通过 OBS 捕捉模型画面。</p>
+        </div>
+
+        <figure class="image-frame mode-toggle-figure"><img src="assets/images/display-modes.png" alt="控制面板中的覆盖模式与背景模式开关" data-i18n-alt="modes.toggleAlt" width="182" height="70" loading="lazy"><figcaption data-i18n="modes.toggleCaption">在控制面板中切换显示模式</figcaption></figure>
+
+        <div class="mode-grid">
+          <article class="mode-card">
+            <span class="mode-number">01</span>
+            <div><h3 data-i18n="modes.overlay.title">覆盖模式</h3><p data-i18n="modes.overlay.body">隐藏应用界面，仅显示模型，并使模型窗口保持置顶。适合让模型直接覆盖在其他桌面内容之上。</p></div>
+          </article>
+          <article class="mode-card">
+            <span class="mode-number">02</span>
+            <div><h3 data-i18n="modes.background.title">背景模式（OBS）</h3><p data-i18n="modes.background.body">让模型在后台运行，不会遮挡你的屏幕操作；OBS 仍可捕捉模型，因此观众可以看到，适合直播或视频录制。</p></div>
+          </article>
+        </div>
+
+        <article class="obs-guide">
+          <div class="obs-copy">
+            <p class="mini-label">OBS · WINDOW CAPTURE</p>
+            <h3 data-i18n="modes.obs.title">以透明背景捕捉模型</h3>
+            <p data-i18n="modes.obs.body">在 OBS 的窗口捕获属性中勾选 <code>Allow Transparency</code>，即可隐藏背景并以透明背景捕捉模型。</p>
+          </div>
+          <figure class="image-frame dark-frame"><img src="assets/images/obs-transparency.png" alt="OBS 窗口捕获属性中的 Allow Transparency 选项" data-i18n-alt="modes.obs.imgAlt" width="715" height="769" loading="lazy"><figcaption data-i18n="modes.obs.caption">勾选 Allow Transparency</figcaption></figure>
+        </article>
+      </section>
+
       <section class="manual-section tutorial-section" id="tutorial">
-        <div class="section-heading"><p class="section-number">05 · MODELLER TUTORIAL</p><h2 data-i18n="s05.heading">互动鼠标模型制作方法</h2><p data-i18n="s05.intro">以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
+        <div class="section-heading"><p class="section-number">06 · MODELLER TUTORIAL</p><h2 data-i18n="s05.heading">互动鼠标模型制作方法</h2><p data-i18n="s05.intro">以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
         <div class="callout warning"><span class="callout-icon" aria-hidden="true">!</span><div><strong data-i18n="warning.title">需要 Live2D 制作基础</strong><p data-i18n="warning.body">本节是与 Cursor for Live2D 相关的制作经验分享，不覆盖 Cubism 的基础建模操作。</p></div></div>
 
         <div class="timeline">
@@ -219,36 +249,6 @@
             <div class="figure-pair"><figure class="image-frame"><img src="assets/images/cursor-x-physics.png" alt="Cubism 物理设置中使用 Cursor X 作为输入参数" data-i18n-alt="tl5.fig1Alt" width="956" height="735" loading="lazy"><figcaption data-i18n="tl5.fig1Caption">将 Cursor X 设置为物理输入</figcaption></figure><figure class="image-frame"><img src="assets/images/cursor-x-parameter.png" alt="Cursor X 参数的 ID 设置为 ParamCursorX" data-i18n-alt="tl5.fig2Alt" width="396" height="319" loading="lazy"><figcaption data-i18n="tl5.fig2Caption">参数 ID：ParamCursorX</figcaption></figure></div>
           </article>
         </div>
-      </section>
-
-      <section class="manual-section" id="display-modes">
-        <div class="section-heading">
-          <p class="section-number">06 · DISPLAY MODES</p>
-          <h2 data-i18n="modes.heading">覆盖模式与背景模式</h2>
-          <p data-i18n="modes.intro">两种显示模式适用于不同场景：覆盖模式让模型直接显示在桌面最上层，背景模式则便于通过 OBS 捕捉模型画面。</p>
-        </div>
-
-        <figure class="image-frame mode-toggle-figure"><img src="assets/images/display-modes.png" alt="控制面板中的覆盖模式与背景模式开关" data-i18n-alt="modes.toggleAlt" width="182" height="70" loading="lazy"><figcaption data-i18n="modes.toggleCaption">在控制面板中切换显示模式</figcaption></figure>
-
-        <div class="mode-grid">
-          <article class="mode-card">
-            <span class="mode-number">01</span>
-            <div><h3 data-i18n="modes.overlay.title">覆盖模式</h3><p data-i18n="modes.overlay.body">隐藏应用界面，仅显示模型，并使模型窗口保持置顶。适合让模型直接覆盖在其他桌面内容之上。</p></div>
-          </article>
-          <article class="mode-card">
-            <span class="mode-number">02</span>
-            <div><h3 data-i18n="modes.background.title">背景模式（OBS）</h3><p data-i18n="modes.background.body">让模型在后台运行，不会遮挡你的屏幕操作；OBS 仍可捕捉模型，因此观众可以看到，适合直播或视频录制。</p></div>
-          </article>
-        </div>
-
-        <article class="obs-guide">
-          <div class="obs-copy">
-            <p class="mini-label">OBS · WINDOW CAPTURE</p>
-            <h3 data-i18n="modes.obs.title">以透明背景捕捉模型</h3>
-            <p data-i18n="modes.obs.body">在 OBS 的窗口捕获属性中勾选 <code>Allow Transparency</code>，即可隐藏背景并以透明背景捕捉模型。</p>
-          </div>
-          <figure class="image-frame dark-frame"><img src="assets/images/obs-transparency.png" alt="OBS 窗口捕获属性中的 Allow Transparency 选项" data-i18n-alt="modes.obs.imgAlt" width="715" height="769" loading="lazy"><figcaption data-i18n="modes.obs.caption">勾选 Allow Transparency</figcaption></figure>
-        </article>
       </section>
 
       <section class="manual-section" id="checklist">
