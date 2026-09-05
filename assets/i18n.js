@@ -557,10 +557,15 @@
     return SUPPORTED_LANGS.indexOf(input) !== -1 ? input : DEFAULT_LANG;
   }
 
-  function t(key) {
+  function lookup(key) {
     var table = dict[currentLang] || dict[DEFAULT_LANG];
     var value = table ? table[key] : undefined;
     if (value === undefined && dict[DEFAULT_LANG]) value = dict[DEFAULT_LANG][key];
+    return value;
+  }
+
+  function t(key) {
+    var value = lookup(key);
     return value === undefined ? key : value;
   }
 
@@ -570,7 +575,7 @@
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
       var key = el.getAttribute('data-i18n');
-      var value = t(key);
+      var value = lookup(key);
       if (value !== undefined) el.innerHTML = value;
     }
   }
@@ -584,7 +589,7 @@
       for (var i = 0; i < nodes.length; i++) {
         var el = nodes[i];
         var key = el.getAttribute(dataAttr);
-        var value = t(key);
+        var value = lookup(key);
         if (value !== undefined) el.setAttribute(attrName, value);
       }
     }
