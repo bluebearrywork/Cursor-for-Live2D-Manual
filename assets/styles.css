@@ -191,11 +191,11 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .dark-frame { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), #000 12%); }
 .shortcut-copy .mini-label { color: var(--accent); }
 .key-list { display: grid; gap: 14px; margin: 14px 0 28px; }
-.key-display { display: flex; align-items: center; gap: 20px; }
-.key-display kbd { min-width: 72px; height: 72px; border: 0; border-bottom: 5px solid #bb6a2d; background: var(--accent); color: #2c1c10; font-size: 30px; }
+.key-display { display: grid; grid-template-columns: 190px minmax(0, 1fr); align-items: center; gap: 20px; }
+.key-display kbd { min-width: 38px; height: 38px; padding: 0 9px; border: 0; border-bottom: 3px solid #bb6a2d; background: var(--accent); color: #2c1c10; font-size: 13px; }
+.key-display > kbd { justify-self: start; }
 .key-display span { max-width: 170px; font-size: 15px; font-weight: 700; line-height: 1.45; }
-.key-combo > div { display: flex; align-items: center; gap: 6px; min-width: 210px; }
-.key-combo kbd { min-width: 0; width: auto; height: 38px; padding: 0 10px; border-bottom-width: 3px; font-size: 13px; }
+.key-combo > div { display: flex; align-items: center; gap: 5px; }
 .key-combo b { color: color-mix(in srgb, var(--bg), transparent 42%); font-size: 12px; }
 .shortcut-copy .callout { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), var(--bg) 8%); color: var(--bg); }
 .shortcut-copy .callout p { color: color-mix(in srgb, var(--bg), transparent 25%); }
@@ -288,6 +288,7 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
   .step-index { margin-bottom: 8px; }
   .step-card figure, .step-card .figure-pair { margin-top: 22px; }
   .figure-pair, .figure-pair.balanced { grid-template-columns: 1fr; }
+  .key-display { grid-template-columns: 160px minmax(0, 1fr); gap: 12px; }
   .detail-block { padding: 24px 18px; }
   .rule-row { grid-template-columns: 70px 1fr; gap: 8px; }
   .rule-row > span:last-child { grid-column: 2; color: color-mix(in srgb, var(--bg), transparent 40%); }
