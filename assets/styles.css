@@ -157,6 +157,10 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .compact-steps li { display: flex; align-items: center; gap: 12px; font-size: 13px; }
 .compact-steps li > span { display: grid; place-items: center; flex: 0 0 25px; height: 25px; border-radius: 50%; background: var(--surface-soft); color: var(--accent-deep); font-size: 10px; font-weight: 800; }
 .text-link { color: var(--accent-deep); font-size: 12px; font-weight: 700; text-underline-offset: 4px; }
+.anchor-tip { margin-top: 24px; padding: 14px 16px; border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; background: var(--surface-soft); }
+.anchor-tip strong { font-size: 12px; }
+.anchor-tip p { margin: 2px 0 0; color: var(--text-soft); font-size: 12px; line-height: 1.7; }
+.anchor-tip .text-link { margin-left: .25em; }
 .image-frame { padding: 12px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--bg); }
 .image-frame img { width: 100%; border-radius: 10px; }
 
@@ -177,9 +181,13 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .shortcut-card { display: grid; grid-template-columns: minmax(280px, .9fr) 1.1fr; gap: 50px; align-items: center; padding: 42px; border-radius: var(--radius-lg); background: var(--surface-strong); color: var(--bg); }
 .dark-frame { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), #000 12%); }
 .shortcut-copy .mini-label { color: var(--accent); }
-.key-display { display: flex; align-items: center; gap: 20px; margin: 14px 0 28px; }
+.key-list { display: grid; gap: 14px; margin: 14px 0 28px; }
+.key-display { display: flex; align-items: center; gap: 20px; }
 .key-display kbd { min-width: 72px; height: 72px; border: 0; border-bottom: 5px solid #bb6a2d; background: var(--accent); color: #2c1c10; font-size: 30px; }
 .key-display span { max-width: 170px; font-size: 15px; font-weight: 700; line-height: 1.45; }
+.key-combo > div { display: flex; align-items: center; gap: 6px; min-width: 210px; }
+.key-combo kbd { min-width: 0; width: auto; height: 38px; padding: 0 10px; border-bottom-width: 3px; font-size: 13px; }
+.key-combo b { color: color-mix(in srgb, var(--bg), transparent 42%); font-size: 12px; }
 .shortcut-copy .callout { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), var(--bg) 8%); color: var(--bg); }
 .shortcut-copy .callout p { color: color-mix(in srgb, var(--bg), transparent 25%); }
 
@@ -193,7 +201,8 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .timeline-step > figure, .timeline-step > .figure-pair, .timeline-step > .tutorial-gallery { grid-column: 2; }
 .timeline-step > .image-frame img { aspect-ratio: 2.05 / 1; object-fit: cover; }
 .figure-pair.balanced { grid-template-columns: 1.7fr .7fr; align-items: stretch; }
-.figure-pair.balanced .image-frame img { height: 100%; object-fit: cover; }
+.figure-pair.balanced .image-frame { display: flex; flex-direction: column; }
+.figure-pair.balanced .image-frame img { width: 100%; height: clamp(260px, 32vw, 380px); object-fit: cover; }
 .tutorial-gallery { display: grid; grid-template-columns: .7fr .7fr 1.6fr; gap: 14px; align-items: stretch; }
 .tutorial-gallery .image-frame { display: flex; flex-direction: column; }
 .tutorial-gallery img { flex: 1; height: 250px; object-fit: contain; background: #2d2d2d; }
