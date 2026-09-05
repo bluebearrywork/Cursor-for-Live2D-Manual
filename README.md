@@ -21,4 +21,4 @@ The site is compatible with GitHub Pages and can be deployed directly from the r
 
 ## Source
 
-The content and screenshots were reorganized from the original Cursor for Live2D modeller manual included in this repository.
+The content and screenshots were reorganized from the original Cursor for Live2D modeller manual. The source document is intentionally excluded from this repository.
