@@ -1,9 +1,14 @@
 const root = document.documentElement;
+
+const requestedLang = new URLSearchParams(location.search).get('lang');
+const activeLang = window.I18N.apply(window.I18N.resolveLang(requestedLang));
+
 const themeButton = document.querySelector('#theme-toggle');
 const menuButton = document.querySelector('#menu-toggle');
 const backdrop = document.querySelector('#sidebar-backdrop');
 const tocLinks = [...document.querySelectorAll('.toc a')];
 const lightbox = document.querySelector('#lightbox');
+const langLinks = [...document.querySelectorAll('.lang-switcher a[data-lang]')];
 
 const savedTheme = localStorage.getItem('manual-theme');
 const preferredTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -11,7 +16,7 @@ root.dataset.theme = savedTheme || preferredTheme;
 
 function updateThemeLabel() {
   const isDark = root.dataset.theme === 'dark';
-  themeButton.setAttribute('aria-label', isDark ? '切换浅色模式' : '切换深色模式');
+  themeButton.setAttribute('aria-label', window.I18N.t(isDark ? 'theme.ariaLabelToLight' : 'theme.ariaLabelToDark'));
 }
 
 updateThemeLabel();
@@ -39,6 +44,20 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMenu();
 });
 
+function refreshLangSwitcher() {
+  langLinks.forEach((link) => {
+    const code = link.dataset.lang;
+    link.href = `?lang=${code}${location.hash}`;
+    const isActive = code === activeLang;
+    link.classList.toggle('is-active', isActive);
+    if (isActive) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+}
+
+refreshLangSwitcher();
+window.addEventListener('hashchange', refreshLangSwitcher);
+
 const sections = tocLinks
   .map((link) => document.querySelector(link.hash))
   .filter(Boolean);
@@ -62,7 +81,7 @@ sections.forEach((section) => sectionObserver.observe(section));
 document.querySelectorAll('figure img').forEach((image) => {
   image.tabIndex = 0;
   image.setAttribute('role', 'button');
-  image.setAttribute('aria-label', `${image.alt}，点击放大`);
+  image.setAttribute('aria-label', `${image.alt}${window.I18N.t('lightbox.zoomHintSuffix')}`);
 
   const openImage = () => {
     lightbox.querySelector('img').src = image.currentSrc || image.src;

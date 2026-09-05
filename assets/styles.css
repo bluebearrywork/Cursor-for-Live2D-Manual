@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap');
 
 :root {
   --bg: #fffaf5;
@@ -40,6 +40,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body { margin: 0; background: var(--bg); color: var(--text); font-family: "DM Sans", "Noto Sans SC", sans-serif; line-height: 1.75; transition: background .25s, color .25s; }
+[lang="ja"] body { font-family: "DM Sans", "Noto Sans JP", sans-serif; }
 body.menu-open { overflow: hidden; }
 a { color: inherit; }
 img { display: block; max-width: 100%; height: auto; }
@@ -55,6 +56,13 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .topbar { position: fixed; inset: 0 0 auto; z-index: 100; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; border-bottom: 1px solid color-mix(in srgb, var(--line), transparent 18%); background: color-mix(in srgb, var(--bg), transparent 12%); backdrop-filter: blur(18px); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 14px; font-weight: 700; letter-spacing: -.01em; }
 .brand-mark { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 5px 9px rgba(72, 43, 22, .18)); }
+.topbar-tools { display: flex; align-items: center; gap: 14px; }
+.lang-switcher { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface-soft); }
+.lang-switcher a { display: inline-flex; align-items: center; justify-content: center; padding: 6px 12px; border-radius: 999px; color: var(--text-soft); font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+.lang-switcher a:hover { color: var(--text); }
+.lang-switcher a.is-active { background: var(--accent); color: #2c1c10; }
+.lang-switcher a:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+[data-theme="dark"] .lang-switcher a.is-active { color: #2c1c10; }
 .top-actions { display: flex; align-items: center; gap: 8px; }
 .icon-button, .menu-button { width: 42px; height: 42px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: var(--text); cursor: pointer; }
 .icon-button:hover, .menu-button:hover { background: var(--surface-soft); }
@@ -82,6 +90,7 @@ main { min-width: 0; overflow: hidden; }
 .hero::before { content: ""; position: absolute; inset: 0; opacity: .35; pointer-events: none; background-image: radial-gradient(var(--accent) .6px, transparent .6px); background-size: 20px 20px; mask-image: linear-gradient(to right, black, transparent 45%); }
 .hero-copy, .hero-visual { position: relative; z-index: 1; }
 .hero h1 { max-width: 650px; margin: 18px 0 22px; font-family: "Noto Sans SC", sans-serif; font-size: clamp(48px, 5vw, 78px); line-height: 1.1; letter-spacing: -.055em; }
+[lang="ja"] .hero h1, [lang="ja"] .section-heading h2 { font-family: "Noto Sans JP", sans-serif; }
 .hero h1 em { color: var(--accent-deep); font-style: normal; }
 .hero-lead { max-width: 590px; margin: 0; color: var(--text-soft); font-size: 17px; line-height: 1.85; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
@@ -236,6 +245,7 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
 
 @media (max-width: 800px) {
   .topbar { padding: 0 18px; }
+  .topbar-tools { gap: 8px; }
   .menu-button { display: flex; }
   .page-shell { display: block; }
   .sidebar { position: fixed; top: 68px; left: 0; width: min(84vw, 320px); height: calc(100vh - 68px); transform: translateX(-102%); transition: transform .25s ease; box-shadow: 20px 0 50px rgba(0,0,0,.16); }
@@ -262,7 +272,9 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
 }
 
 @media (max-width: 520px) {
-  .brand > span:last-child { font-size: 12px; }
+  .brand > span:last-child { display: none; }
+  .lang-switcher { gap: 1px; padding: 2px; }
+  .lang-switcher a { padding: 5px 8px; font-size: 12px; }
   .hero { padding-inline: 20px; }
   .hero-lead { font-size: 15px; }
   .hero-actions .button { flex: 1; }

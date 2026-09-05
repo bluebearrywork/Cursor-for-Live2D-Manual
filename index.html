@@ -3,48 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cursor for Live2D 模型师使用手册：模型导入、锚点设置、按键表情、快捷键与互动鼠标模型制作教程。">
+  <meta name="description" content="Cursor for Live2D 模型师使用手册：模型导入、锚点设置、按键表情、快捷键与互动鼠标模型制作教程。" data-i18n-content="meta.description">
   <meta name="theme-color" content="#f59b52">
-  <title>Cursor for Live2D · 模型师手册</title>
+  <title data-i18n="meta.title">Cursor for Live2D · 模型师手册</title>
   <link rel="icon" href="assets/images/app-icon.ico">
   <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/i18n.js" defer></script>
   <script src="assets/app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到正文</a>
+  <a class="skip-link" href="#main" data-i18n="skip.link">跳到正文</a>
 
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="返回顶部">
+    <a class="brand" href="#top" aria-label="返回顶部" data-i18n-aria-label="brand.ariaLabel">
       <img class="brand-mark" src="assets/images/app-icon.ico" alt="" width="38" height="38">
       <span>Cursor for Live2D</span>
     </a>
-    <nav class="top-actions" aria-label="页面工具">
-      <button class="icon-button" id="theme-toggle" type="button" aria-label="切换深色模式" title="切换主题">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.91-.1-1.35a7 7 0 0 1-7.55-7.55C12.91 3.04 12.46 3 12 3Z"/></svg>
-      </button>
-      <button class="menu-button" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
-        <span></span><span></span><span></span><span class="sr-only">打开目录</span>
-      </button>
-    </nav>
+    <div class="topbar-tools">
+      <nav class="lang-switcher" id="lang-switcher" aria-label="切换语言" data-i18n-aria-label="langSwitcher.ariaLabel">
+        <a href="?lang=zh-CN" data-lang="zh-CN" lang="zh-CN" hreflang="zh-CN">中文</a>
+        <a href="?lang=en" data-lang="en" lang="en" hreflang="en">English</a>
+        <a href="?lang=ja" data-lang="ja" lang="ja" hreflang="ja">日本語</a>
+      </nav>
+      <nav class="top-actions" aria-label="页面工具" data-i18n-aria-label="nav.pageTools">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换深色模式" title="切换主题" data-i18n-title="theme.title">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.91-.1-1.35a7 7 0 0 1-7.55-7.55C12.91 3.04 12.46 3 12 3Z"/></svg>
+        </button>
+        <button class="menu-button" id="menu-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+          <span></span><span></span><span></span><span class="sr-only" data-i18n="menu.openToc">打开目录</span>
+        </button>
+      </nav>
+    </div>
   </header>
 
   <div class="page-shell" id="top">
-    <aside class="sidebar" id="sidebar" aria-label="手册目录">
+    <aside class="sidebar" id="sidebar" aria-label="手册目录" data-i18n-aria-label="sidebar.ariaLabel">
       <div class="sidebar-inner">
-        <p class="eyebrow">使用手册</p>
-        <p class="sidebar-title">模型师指南</p>
+        <p class="eyebrow" data-i18n="sidebar.eyebrow">使用手册</p>
+        <p class="sidebar-title" data-i18n="sidebar.title">模型师指南</p>
         <nav class="toc">
-          <a href="#overview"><span>00</span>开始之前</a>
-          <a href="#import"><span>01</span>导入模型</a>
-          <a href="#settings"><span>02</span>模型设置</a>
-          <a href="#expressions"><span>03</span>按键表情</a>
-          <a href="#shortcuts"><span>04</span>软件快捷键</a>
-          <a href="#tutorial"><span>05</span>制作方法分享</a>
-          <a href="#checklist"><span>06</span>发布前检查</a>
+          <a href="#overview" data-i18n="toc.overview"><span>00</span>开始之前</a>
+          <a href="#import" data-i18n="toc.import"><span>01</span>导入模型</a>
+          <a href="#settings" data-i18n="toc.settings"><span>02</span>模型设置</a>
+          <a href="#expressions" data-i18n="toc.expressions"><span>03</span>按键表情</a>
+          <a href="#shortcuts" data-i18n="toc.shortcuts"><span>04</span>软件快捷键</a>
+          <a href="#tutorial" data-i18n="toc.tutorial"><span>05</span>制作方法分享</a>
+          <a href="#checklist" data-i18n="toc.checklist"><span>06</span>发布前检查</a>
         </nav>
         <div class="sidebar-note">
-          <strong>适合谁？</strong>
-          <p>面向已有 Live2D 基础、希望制作互动鼠标模型的模型师。</p>
+          <strong data-i18n="sidebar.note.title">适合谁？</strong>
+          <p data-i18n="sidebar.note.body">面向已有 Live2D 基础、希望制作互动鼠标模型的模型师。</p>
         </div>
       </div>
     </aside>
@@ -54,7 +62,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">User Manual · For Modellers</p>
-          <h1 id="hero-title">让 Live2D 模型<br><em>跟随你的指针</em></h1>
+          <h1 id="hero-title" data-i18n="hero.title">让 Live2D 模型<br><em>跟随你的指针</em></h1>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="orb orb-one"></div><div class="orb orb-two"></div>
@@ -66,167 +74,167 @@
       <section class="manual-section intro-section" id="overview">
         <div class="section-heading">
           <p class="section-number">00 · OVERVIEW</p>
-          <h2>开始之前</h2>
-          <p>本手册侧重 Live2D 模型制作与参数配置，并非 Live2D 入门教程。建议先掌握 Cubism 的参数、ArtMesh、顶点和表情导出等基础操作。</p>
+          <h2 data-i18n="s00.heading">开始之前</h2>
+          <p data-i18n="s00.intro">本手册侧重 Live2D 模型制作与参数配置，并非 Live2D 入门教程。建议先掌握 Cubism 的参数、ArtMesh、顶点和表情导出等基础操作。</p>
         </div>
         <div class="callout info">
           <span class="callout-icon" aria-hidden="true">i</span>
-          <div><strong>普通用户提示</strong><p>如果只需要使用现成模型，可以优先查看应用的简洁介绍视频；本页更适合作为详细设置参考。</p></div>
+          <div><strong data-i18n="s00.callout.title">普通用户提示</strong><p data-i18n="s00.callout.body">如果只需要使用现成模型，可以优先查看应用的简洁介绍视频；本页更适合作为详细设置参考。</p></div>
         </div>
-        <div class="route-grid" aria-label="阅读路线">
-          <a href="#import"><span>初次使用</span><strong>导入并保存模型设置 →</strong></a>
-          <a href="#settings"><span>模型配置</span><strong>缩放、物理与锚点 →</strong></a>
-          <a href="#expressions"><span>互动效果</span><strong>表情、动作与快捷键 →</strong></a>
-          <a href="#tutorial"><span>模型制作</span><strong>制作点击动作与跟踪点 →</strong></a>
+        <div class="route-grid" aria-label="阅读路线" data-i18n-aria-label="route.ariaLabel">
+          <a href="#import" data-i18n="route.import"><span>初次使用</span><strong>导入并保存模型设置 →</strong></a>
+          <a href="#settings" data-i18n="route.settings"><span>模型配置</span><strong>缩放、物理与锚点 →</strong></a>
+          <a href="#expressions" data-i18n="route.expressions"><span>互动效果</span><strong>表情、动作与快捷键 →</strong></a>
+          <a href="#tutorial" data-i18n="route.tutorial"><span>模型制作</span><strong>制作点击动作与跟踪点 →</strong></a>
         </div>
       </section>
 
       <section class="manual-section" id="import">
         <div class="section-heading">
           <p class="section-number">01 · MODEL IMPORT</p>
-          <h2>导入模型</h2>
-          <p>加载完整模型文件夹，或直接将文件夹内的 <code>.model3.json</code> 文件拖入控制面板，即可完成加载。</p>
+          <h2 data-i18n="s01.heading">导入模型</h2>
+          <p data-i18n="s01.intro">加载完整模型文件夹，或直接将文件夹内的 <code>.model3.json</code> 文件拖入控制面板，即可完成加载。</p>
         </div>
 
         <div class="step-list">
           <article class="step-card">
             <div class="step-index">01</div>
-            <div class="step-content"><h3>加载模型</h3><p>点击“浏览文件夹加载模型”，或把 <code>.model3.json</code> 文件拖放到窗口中。</p></div>
-            <figure><img src="assets/images/image11.png" alt="控制面板中的浏览文件夹加载模型按钮" width="387" height="94" loading="lazy"><figcaption>控制面板支持浏览与拖放两种方式</figcaption></figure>
+            <div class="step-content"><h3 data-i18n="step1.title">加载模型</h3><p data-i18n="step1.body">点击“浏览文件夹加载模型”，或把 <code>.model3.json</code> 文件拖放到窗口中。</p></div>
+            <figure><img src="assets/images/image11.png" alt="控制面板中的浏览文件夹加载模型按钮" data-i18n-alt="step1.imgAlt" width="387" height="94" loading="lazy"><figcaption data-i18n="step1.caption">控制面板支持浏览与拖放两种方式</figcaption></figure>
           </article>
           <article class="step-card">
             <div class="step-index">02</div>
-            <div class="step-content"><h3>选择完整文件夹</h3><p>选择包含模型纹理、物理、动作及 <code>.model3.json</code> 的根目录。</p></div>
-            <figure class="figure-wide"><img src="assets/images/image4.png" alt="Windows 文件夹选择窗口" width="803" height="345" loading="lazy"><figcaption>选择模型根目录</figcaption></figure>
+            <div class="step-content"><h3 data-i18n="step2.title">选择完整文件夹</h3><p data-i18n="step2.body">选择包含模型纹理、物理、动作及 <code>.model3.json</code> 的根目录。</p></div>
+            <figure class="figure-wide"><img src="assets/images/image4.png" alt="Windows 文件夹选择窗口" data-i18n-alt="step2.imgAlt" width="803" height="345" loading="lazy"><figcaption data-i18n="step2.caption">选择模型根目录</figcaption></figure>
           </article>
           <article class="step-card">
             <div class="step-index">03</div>
-            <div class="step-content"><h3>保存或迁移设置</h3><p>点击“保存模型设置”后，模型文件夹会生成 <code>c4l_model_settings</code> 设置文件。它可以和模型一起打包，也可以单独发送，并通过“导入模型设置”恢复。</p></div>
+            <div class="step-content"><h3 data-i18n="step3.title">保存或迁移设置</h3><p data-i18n="step3.body">点击“保存模型设置”后，模型文件夹会生成 <code>c4l_model_settings</code> 设置文件。它可以和模型一起打包，也可以单独发送，并通过“导入模型设置”恢复。</p></div>
             <div class="figure-pair">
-              <figure><img src="assets/images/settings-file.png" alt="模型文件夹中的 c4l_model_settings 文件" width="161" height="237" loading="lazy"><figcaption>文件名：c4l_model_settings</figcaption></figure>
-              <figure><img src="assets/images/image8.png" alt="保存模型设置和导入模型设置按钮" width="386" height="81" loading="lazy"><figcaption>保存 / 导入模型设置</figcaption></figure>
+              <figure><img src="assets/images/settings-file.png" alt="模型文件夹中的 c4l_model_settings 文件" data-i18n-alt="step3.img1Alt" width="161" height="237" loading="lazy"><figcaption data-i18n="step3.caption1">文件名：c4l_model_settings</figcaption></figure>
+              <figure><img src="assets/images/image8.png" alt="保存模型设置和导入模型设置按钮" data-i18n-alt="step3.img2Alt" width="386" height="81" loading="lazy"><figcaption data-i18n="step3.caption2">保存 / 导入模型设置</figcaption></figure>
             </div>
           </article>
         </div>
 
-        <div class="callout tip"><span class="callout-icon" aria-hidden="true">↻</span><div><strong>模型有更新？</strong><p>在控制面板中右键单击模型选项，然后选择“重新加载”，无需删除后重新导入。</p></div><img src="assets/images/image14.png" alt="模型右键菜单中的重新加载选项" width="390" height="168" loading="lazy"></div>
+        <div class="callout tip"><span class="callout-icon" aria-hidden="true">↻</span><div><strong data-i18n="callout.update.title">模型有更新？</strong><p data-i18n="callout.update.body">在控制面板中右键单击模型选项，然后选择“重新加载”，无需删除后重新导入。</p></div><img src="assets/images/image14.png" alt="模型右键菜单中的重新加载选项" data-i18n-alt="callout.update.imgAlt" width="390" height="168" loading="lazy"></div>
       </section>
 
       <section class="manual-section" id="settings">
         <div class="section-heading">
           <p class="section-number">02 · MODEL SETTINGS</p>
-          <h2>模型设置</h2>
-          <p>模型的缩放、物理增益与锚点共同决定跟踪时的视觉效果。建议按以下顺序完成配置。</p>
+          <h2 data-i18n="s02.heading">模型设置</h2>
+          <p data-i18n="s02.intro">模型的缩放、物理增益与锚点共同决定跟踪时的视觉效果。建议按以下顺序完成配置。</p>
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card"><div class="feature-head"><span>01</span><h3>调整缩放</h3></div><p>缩放会以当前选择的锚点为中心进行。</p><img src="assets/images/image6.png" alt="模型缩放滑块" width="266" height="72" loading="lazy"></article>
-          <article class="feature-card"><div class="feature-head"><span>02</span><h3>调整物理增益</h3></div><p>物理增益控制模型物理效果的幅度。数值越高，鼠标移动带来的物理反馈越明显。</p><img src="assets/images/image15.png" alt="物理增益滑块" width="267" height="76" loading="lazy"></article>
+          <article class="feature-card"><div class="feature-head"><span>01</span><h3 data-i18n="feature1.title">调整缩放</h3></div><p data-i18n="feature1.body">缩放会以当前选择的锚点为中心进行。</p><img src="assets/images/image6.png" alt="模型缩放滑块" data-i18n-alt="feature1.imgAlt" width="266" height="72" loading="lazy"></article>
+          <article class="feature-card"><div class="feature-head"><span>02</span><h3 data-i18n="feature2.title">调整物理增益</h3></div><p data-i18n="feature2.body">物理增益控制模型物理效果的幅度。数值越高，鼠标移动带来的物理反馈越明显。</p><img src="assets/images/image15.png" alt="物理增益滑块" data-i18n-alt="feature2.imgAlt" width="267" height="76" loading="lazy"></article>
         </div>
 
         <article class="detail-block">
           <div class="detail-copy">
-            <p class="mini-label">参数识别规则</p>
-            <h3>正确命名 X / Y 轴输入参数</h3>
-            <p>软件会自动识别模型的横向和纵向物理输入。参数 ID 的末尾必须是大写 <code>X</code> 或 <code>Y</code>；其后也可以只包含数字。</p>
+            <p class="mini-label" data-i18n="detail.label">参数识别规则</p>
+            <h3 data-i18n="detail.title">正确命名 X / Y 轴输入参数</h3>
+            <p data-i18n="detail.body">软件会自动识别模型的横向和纵向物理输入。参数 ID 的末尾必须是大写 <code>X</code> 或 <code>Y</code>；其后也可以只包含数字。</p>
           </div>
-          <div class="rule-table" role="table" aria-label="参数命名示例">
-            <div class="rule-row rule-head" role="row"><span role="columnheader">结果</span><span role="columnheader">参数 ID</span><span role="columnheader">原因</span></div>
-            <div class="rule-row good" role="row"><span role="cell">识别</span><code role="cell">ParamCursorX</code><span role="cell">以大写 X 结尾</span></div>
-            <div class="rule-row good" role="row"><span role="cell">识别</span><code role="cell">ParamAngleY2</code><span role="cell">Y 后只有数字</span></div>
-            <div class="rule-row bad" role="row"><span role="cell">不识别</span><code role="cell">ParamCursorx</code><span role="cell">使用了小写 x</span></div>
-            <div class="rule-row bad" role="row"><span role="cell">不识别</span><code role="cell">Parambody</code><span role="cell">末尾无 X / Y</span></div>
+          <div class="rule-table" role="table" aria-label="参数命名示例" data-i18n-aria-label="rule.ariaLabel">
+            <div class="rule-row rule-head" role="row"><span role="columnheader" data-i18n="rule.col.result">结果</span><span role="columnheader" data-i18n="rule.col.paramId">参数 ID</span><span role="columnheader" data-i18n="rule.col.reason">原因</span></div>
+            <div class="rule-row good" role="row"><span role="cell" data-i18n="rule.row1.result">识别</span><code role="cell">ParamCursorX</code><span role="cell" data-i18n="rule.row1.reason">以大写 X 结尾</span></div>
+            <div class="rule-row good" role="row"><span role="cell" data-i18n="rule.row2.result">识别</span><code role="cell">ParamAngleY2</code><span role="cell" data-i18n="rule.row2.reason">Y 后只有数字</span></div>
+            <div class="rule-row bad" role="row"><span role="cell" data-i18n="rule.row3.result">不识别</span><code role="cell">ParamCursorx</code><span role="cell" data-i18n="rule.row3.reason">使用了小写 x</span></div>
+            <div class="rule-row bad" role="row"><span role="cell" data-i18n="rule.row4.result">不识别</span><code role="cell">Parambody</code><span role="cell" data-i18n="rule.row4.reason">末尾无 X / Y</span></div>
           </div>
         </article>
 
         <article class="anchor-guide">
           <div class="anchor-copy">
-            <p class="mini-label">关键设置</p><h3>选择跟踪锚点</h3>
-            <p>点击“点击选择”，可以直接在模型上选择任意 ArtMesh 顶点作为锚点；也可以输入 ArtMesh ID 和顶点号码，通过列表定位后确认。</p>
-            <ol class="compact-steps"><li><span>1</span>打开锚点区域并点击“点击选择”</li><li><span>2</span>在模型上点击目标 ArtMesh 顶点</li><li><span>3</span>按 <kbd>F</kbd>，模型将以锚点跟踪指针尖端</li></ol>
-            <div class="anchor-tip"><strong>小提示</strong><p>顶点号码可在 Live2D Cubism 的左上方“显示”菜单中找到，具体见<a class="text-link" href="https://docs.live2d.com/zh-CHS/cubism-editor-manual/display-menu/" target="_blank" rel="noreferrer">Cubism“显示”菜单说明 ↗</a></p></div>
+            <p class="mini-label" data-i18n="anchor.label">关键设置</p><h3 data-i18n="anchor.title">选择跟踪锚点</h3>
+            <p data-i18n="anchor.body">点击“点击选择”，可以直接在模型上选择任意 ArtMesh 顶点作为锚点；也可以输入 ArtMesh ID 和顶点号码，通过列表定位后确认。</p>
+            <ol class="compact-steps"><li data-i18n="anchor.step1"><span>1</span>打开锚点区域并点击“点击选择”</li><li data-i18n="anchor.step2"><span>2</span>在模型上点击目标 ArtMesh 顶点</li><li data-i18n="anchor.step3"><span>3</span>按 <kbd>F</kbd>，模型将以锚点跟踪指针尖端</li></ol>
+            <div class="anchor-tip"><strong data-i18n="anchor.tip.title">小提示</strong><p data-i18n="anchor.tip.body">顶点号码可在 Live2D Cubism 的左上方“显示”菜单中找到，具体见<a class="text-link" href="https://docs.live2d.com/zh-CHS/cubism-editor-manual/display-menu/" target="_blank" rel="noreferrer">Cubism“显示”菜单说明 ↗</a></p></div>
           </div>
-          <figure class="image-frame"><img src="assets/images/image20.png" alt="锚点设置区域，包含 ArtMesh 和顶点选择" width="373" height="142" loading="lazy"><figcaption>可直接点选，或通过 ID 与顶点号码定位</figcaption></figure>
+          <figure class="image-frame"><img src="assets/images/image20.png" alt="锚点设置区域，包含 ArtMesh 和顶点选择" data-i18n-alt="anchor.figAlt" width="373" height="142" loading="lazy"><figcaption data-i18n="anchor.figCaption">可直接点选，或通过 ID 与顶点号码定位</figcaption></figure>
         </article>
       </section>
 
       <section class="manual-section" id="expressions">
-        <div class="section-heading"><p class="section-number">03 · EXPRESSIONS</p><h2>按键表情</h2><p>先在 Live2D Viewer 中完成表情设置，将表情导出为 <code>exp3.json</code> 文件并放入模型文件夹。绑定页面会自动读取模型中的全部表情文件。</p></div>
+        <div class="section-heading"><p class="section-number">03 · EXPRESSIONS</p><h2 data-i18n="s03.heading">按键表情</h2><p data-i18n="s03.intro">先在 Live2D Viewer 中完成表情设置，将表情导出为 <code>exp3.json</code> 文件并放入模型文件夹。绑定页面会自动读取模型中的全部表情文件。</p></div>
         <div class="callout info expression-reference">
           <span class="callout-icon" aria-hidden="true">i</span>
-          <div><strong>如何制作并导出表情？</strong><p>具体步骤请参考 Live2D Cubism 官方手册中的<a class="text-link" href="https://docs.live2d.com/zh-CHS/cubism-editor-manual/setting-and-exporting-facial-expressions/" target="_blank" rel="noreferrer">“创建和导出表情”说明 ↗</a>。</p></div>
+          <div><strong data-i18n="expr.ref.title">如何制作并导出表情？</strong><p data-i18n="expr.ref.body">具体步骤请参考 Live2D Cubism 官方手册中的<a class="text-link" href="https://docs.live2d.com/zh-CHS/cubism-editor-manual/setting-and-exporting-facial-expressions/" target="_blank" rel="noreferrer">“创建和导出表情”说明 ↗</a>。</p></div>
         </div>
         <div class="expression-layout">
-          <figure class="phone-figure"><img src="assets/images/image5.png" alt="完整的表情设置面板" width="345" height="463" loading="lazy"><figcaption>表情设置面板</figcaption></figure>
+          <figure class="phone-figure"><img src="assets/images/image5.png" alt="完整的表情设置面板" data-i18n-alt="expr.phone.alt" width="345" height="463" loading="lazy"><figcaption data-i18n="expr.phone.caption">表情设置面板</figcaption></figure>
           <div class="expression-items">
-            <article><span class="item-number">01</span><div><h3>绑定按键</h3><p>点击绑定按钮，再按下希望使用的键盘或鼠标按键。点击“+ 绑定”可为同一表情增加多个触发键，例如同时绑定鼠标左键和右键。</p></div></article>
-            <article><span class="item-number">02</span><div><h3>选择触发模式</h3><p><strong>按住：</strong>按下时触发，松开后恢复默认，适合鼠标点击。<br><strong>切换：</strong>按一次触发，再按一次取消，适合造型切换。</p><img src="assets/images/image16.png" alt="表情按住与切换模式下拉菜单" width="251" height="127" loading="lazy"></div></article>
-            <article><span class="item-number">03</span><div><h3>设置淡入淡出</h3><p>数值为 <code>0</code> 时瞬间切换；秒数越高，过渡越慢。该设置会影响所有按键表情。</p><img src="assets/images/image9.png" alt="表情淡入淡出设置" width="247" height="125" loading="lazy"></div></article>
+            <article><span class="item-number">01</span><div><h3 data-i18n="expr.item1.title">绑定按键</h3><p data-i18n="expr.item1.body">点击绑定按钮，再按下希望使用的键盘或鼠标按键。点击“+ 绑定”可为同一表情增加多个触发键，例如同时绑定鼠标左键和右键。</p></div></article>
+            <article><span class="item-number">02</span><div><h3 data-i18n="expr.item2.title">选择触发模式</h3><p data-i18n="expr.item2.body"><strong>按住：</strong>按下时触发，松开后恢复默认，适合鼠标点击。<br><strong>切换：</strong>按一次触发，再按一次取消，适合造型切换。</p><img src="assets/images/image16.png" alt="表情按住与切换模式下拉菜单" data-i18n-alt="expr.item2.imgAlt" width="251" height="127" loading="lazy"></div></article>
+            <article><span class="item-number">03</span><div><h3 data-i18n="expr.item3.title">设置淡入淡出</h3><p data-i18n="expr.item3.body">数值为 <code>0</code> 时瞬间切换；秒数越高，过渡越慢。该设置会影响所有按键表情。</p><img src="assets/images/image9.png" alt="表情淡入淡出设置" data-i18n-alt="expr.item3.imgAlt" width="247" height="125" loading="lazy"></div></article>
           </div>
         </div>
 
         <div class="mini-card-grid">
-          <article><img src="assets/images/image21.png" alt="表情设置和快捷键设置按钮" width="380" height="81" loading="lazy"><h3>重新打开面板</h3><p>表情面板关闭后，可从控制面板的“表情设置”再次打开。</p></article>
-          <article><img src="assets/images/image12.png" alt="快速触发表情列表" width="335" height="105" loading="lazy"><h3>快速触发</h3><p>表情较多时，可在快速触发列表中集中查看并测试。</p></article>
-          <article><img src="assets/images/image7.png" alt="待机动画选择区域" width="254" height="81" loading="lazy"><h3>待机动画</h3><p>勾选并选择待机动画；模型文件夹内需包含 <code>motion3.json</code> 文件。</p></article>
+          <article><img src="assets/images/image21.png" alt="表情设置和快捷键设置按钮" data-i18n-alt="expr.mini1.imgAlt" width="380" height="81" loading="lazy"><h3 data-i18n="expr.mini1.title">重新打开面板</h3><p data-i18n="expr.mini1.body">表情面板关闭后，可从控制面板的“表情设置”再次打开。</p></article>
+          <article><img src="assets/images/image12.png" alt="快速触发表情列表" data-i18n-alt="expr.mini2.imgAlt" width="335" height="105" loading="lazy"><h3 data-i18n="expr.mini2.title">快速触发</h3><p data-i18n="expr.mini2.body">表情较多时，可在快速触发列表中集中查看并测试。</p></article>
+          <article><img src="assets/images/image7.png" alt="待机动画选择区域" data-i18n-alt="expr.mini3.imgAlt" width="254" height="81" loading="lazy"><h3 data-i18n="expr.mini3.title">待机动画</h3><p data-i18n="expr.mini3.body">勾选并选择待机动画；模型文件夹内需包含 <code>motion3.json</code> 文件。</p></article>
         </div>
       </section>
 
       <section class="manual-section" id="shortcuts">
-        <div class="section-heading"><p class="section-number">04 · SHORTCUTS</p><h2>软件快捷键</h2><p>左键点击快捷键按钮后，按下新的组合键即可更改默认设置。快捷键配置可以单独保存，便于迁移或备份。</p></div>
+        <div class="section-heading"><p class="section-number">04 · SHORTCUTS</p><h2 data-i18n="s04.heading">软件快捷键</h2><p data-i18n="s04.intro">左键点击快捷键按钮后，按下新的组合键即可更改默认设置。快捷键配置可以单独保存，便于迁移或备份。</p></div>
         <div class="shortcut-card">
-          <figure class="image-frame dark-frame"><img src="assets/images/image18.png" alt="快捷键设置窗口" width="352" height="331" loading="lazy"><figcaption>快捷键设置可保存为独立文件</figcaption></figure>
-          <div class="shortcut-copy"><p class="mini-label">核心快捷键</p><div class="key-list"><div class="key-display"><kbd>F</kbd><span>开始模型跟踪</span></div><div class="key-display key-combo"><div><kbd>Ctrl</kbd><b>+</b><kbd>Shift</kbd><b>+</b><kbd>A</kbd></div><span>覆盖模式</span></div></div><div class="callout compact"><span class="callout-icon" aria-hidden="true">✓</span><div><strong>建议先测试</strong><p>保存前确认快捷键没有与常用软件或系统热键冲突。</p></div></div></div>
+          <figure class="image-frame dark-frame"><img src="assets/images/image18.png" alt="快捷键设置窗口" data-i18n-alt="shortcut.figAlt" width="352" height="331" loading="lazy"><figcaption data-i18n="shortcut.figCaption">快捷键设置可保存为独立文件</figcaption></figure>
+          <div class="shortcut-copy"><p class="mini-label" data-i18n="shortcut.label">核心快捷键</p><div class="key-list"><div class="key-display"><kbd>F</kbd><span data-i18n="shortcut.key1">开始模型跟踪</span></div><div class="key-display key-combo"><div><kbd>Ctrl</kbd><b>+</b><kbd>Shift</kbd><b>+</b><kbd>A</kbd></div><span data-i18n="shortcut.key2">覆盖模式</span></div></div><div class="callout compact"><span class="callout-icon" aria-hidden="true">✓</span><div><strong data-i18n="shortcut.tip.title">建议先测试</strong><p data-i18n="shortcut.tip.body">保存前确认快捷键没有与常用软件或系统热键冲突。</p></div></div></div>
         </div>
       </section>
 
       <section class="manual-section tutorial-section" id="tutorial">
-        <div class="section-heading"><p class="section-number">05 · MODELLER TUTORIAL</p><h2>互动鼠标模型制作方法</h2><p>以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
-        <div class="callout warning"><span class="callout-icon" aria-hidden="true">!</span><div><strong>需要 Live2D 制作基础</strong><p>本节是与 Cursor for Live2D 相关的制作经验分享，不覆盖 Cubism 的基础建模操作。</p></div></div>
+        <div class="section-heading"><p class="section-number">05 · MODELLER TUTORIAL</p><h2 data-i18n="s05.heading">互动鼠标模型制作方法</h2><p data-i18n="s05.intro">以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
+        <div class="callout warning"><span class="callout-icon" aria-hidden="true">!</span><div><strong data-i18n="warning.title">需要 Live2D 制作基础</strong><p data-i18n="warning.body">本节是与 Cursor for Live2D 相关的制作经验分享，不覆盖 Cubism 的基础建模操作。</p></div></div>
 
         <div class="timeline">
           <article class="timeline-step">
             <div class="timeline-marker"><span>1</span></div>
-            <div class="timeline-copy"><p class="mini-label">Cubism · 点击状态</p><h3>制作鼠标点击动作并添加参考线</h3><p>参数 ID 可以自由命名。示例中参数轴 <code>1</code> 表示笔尖落下，<code>0</code> 表示鼠标漂浮。动作完成后，在笔尖落下的位置右键添加参考线。</p></div>
-            <figure class="image-frame"><img src="assets/images/image19.png" alt="在 Cubism 点击状态中于笔尖位置添加参考线" width="1182" height="576" loading="lazy"><figcaption>在点击状态记录笔尖目标位置</figcaption></figure>
+            <div class="timeline-copy"><p class="mini-label" data-i18n="tl1.label">Cubism · 点击状态</p><h3 data-i18n="tl1.title">制作鼠标点击动作并添加参考线</h3><p data-i18n="tl1.body">参数 ID 可以自由命名。示例中参数轴 <code>1</code> 表示笔尖落下，<code>0</code> 表示鼠标漂浮。动作完成后，在笔尖落下的位置右键添加参考线。</p></div>
+            <figure class="image-frame"><img src="assets/images/image19.png" alt="在 Cubism 点击状态中于笔尖位置添加参考线" data-i18n-alt="tl1.figAlt" width="1182" height="576" loading="lazy"><figcaption data-i18n="tl1.figCaption">在点击状态记录笔尖目标位置</figcaption></figure>
           </article>
           <article class="timeline-step">
             <div class="timeline-marker"><span>2</span></div>
-            <div class="timeline-copy"><p class="mini-label">Cubism · 默认状态</p><h3>将一个顶点移动到参考线位置</h3><p>回到参数轴 <code>0</code> 的鼠标漂浮状态，启用编辑 ArtMesh，将一个顶点放到刚才的参考线位置。</p></div>
-            <div class="figure-pair balanced"><figure class="image-frame"><img src="assets/images/image17.png" alt="Cubism 中选中点击参数" width="1167" height="572" loading="lazy"><figcaption>回到默认漂浮状态</figcaption></figure><figure class="image-frame"><img src="assets/images/image3.png" alt="笔尖附近顶点与参考线位置" width="429" height="430" loading="lazy"><figcaption>让目标顶点对齐参考线</figcaption></figure></div>
+            <div class="timeline-copy"><p class="mini-label" data-i18n="tl2.label">Cubism · 默认状态</p><h3 data-i18n="tl2.title">将一个顶点移动到参考线位置</h3><p data-i18n="tl2.body">回到参数轴 <code>0</code> 的鼠标漂浮状态，启用编辑 ArtMesh，将一个顶点放到刚才的参考线位置。</p></div>
+            <div class="figure-pair balanced"><figure class="image-frame"><img src="assets/images/image17.png" alt="Cubism 中选中点击参数" data-i18n-alt="tl2.fig1Alt" width="1167" height="572" loading="lazy"><figcaption data-i18n="tl2.fig1Caption">回到默认漂浮状态</figcaption></figure><figure class="image-frame"><img src="assets/images/image3.png" alt="笔尖附近顶点与参考线位置" data-i18n-alt="tl2.fig2Alt" width="429" height="430" loading="lazy"><figcaption data-i18n="tl2.fig2Caption">让目标顶点对齐参考线</figcaption></figure></div>
           </article>
           <article class="timeline-step">
             <div class="timeline-marker"><span>3</span></div>
-            <div class="timeline-copy"><p class="mini-label">Cursor for Live2D</p><h3>导入模型并选择该顶点</h3><p>导出后将模型导入应用。在 Cubism 的“显示 → 显示图形网格顶点号码”中确认 ArtMesh ID 与顶点号码，或使用“点击选择”直接在模型上选择。</p></div>
-            <div class="tutorial-gallery"><figure class="image-frame"><img src="assets/images/image10.png" alt="Cubism Inspector 中的 ArtMesh ID Folder14" width="340" height="342" loading="lazy"><figcaption>示例 ArtMesh ID：Folder14</figcaption></figure><figure class="image-frame"><img src="assets/images/image2.png" alt="Cubism 中显示的顶点号码" width="311" height="351" loading="lazy"><figcaption>示例顶点号码：4</figcaption></figure><figure class="image-frame gallery-large"><img src="assets/images/image1.png" alt="Cursor for Live2D 中选择 ArtMesh Folder14 的 4 号顶点" width="800" height="398" loading="lazy"><figcaption>在应用中确认锚点</figcaption></figure></div>
+            <div class="timeline-copy"><p class="mini-label">Cursor for Live2D</p><h3 data-i18n="tl3.title">导入模型并选择该顶点</h3><p data-i18n="tl3.body">导出后将模型导入应用。在 Cubism 的“显示 → 显示图形网格顶点号码”中确认 ArtMesh ID 与顶点号码，或使用“点击选择”直接在模型上选择。</p></div>
+            <div class="tutorial-gallery"><figure class="image-frame"><img src="assets/images/image10.png" alt="Cubism Inspector 中的 ArtMesh ID Folder14" data-i18n-alt="tl3.gallery1Alt" width="340" height="342" loading="lazy"><figcaption data-i18n="tl3.gallery1Caption">示例 ArtMesh ID：Folder14</figcaption></figure><figure class="image-frame"><img src="assets/images/image2.png" alt="Cubism 中显示的顶点号码" data-i18n-alt="tl3.gallery2Alt" width="311" height="351" loading="lazy"><figcaption data-i18n="tl3.gallery2Caption">示例顶点号码：4</figcaption></figure><figure class="image-frame gallery-large"><img src="assets/images/image1.png" alt="Cursor for Live2D 中选择 ArtMesh Folder14 的 4 号顶点" data-i18n-alt="tl3.gallery3Alt" width="800" height="398" loading="lazy"><figcaption data-i18n="tl3.gallery3Caption">在应用中确认锚点</figcaption></figure></div>
           </article>
           <article class="timeline-step final-step">
             <div class="timeline-marker"><span>4</span></div>
-            <div class="timeline-copy"><p class="mini-label">完成</p><h3>按 <kbd>F</kbd> 开始跟踪</h3><p>锚点选择完成后，模型会以该顶点为基准跟踪指针箭头的尖端。</p></div>
+            <div class="timeline-copy"><p class="mini-label" data-i18n="tl4.label">完成</p><h3 data-i18n="tl4.title">按 <kbd>F</kbd> 开始跟踪</h3><p data-i18n="tl4.body">锚点选择完成后，模型会以该顶点为基准跟踪指针箭头的尖端。</p></div>
           </article>
         </div>
       </section>
 
       <section class="manual-section" id="checklist">
-        <div class="section-heading"><p class="section-number">06 · FINAL CHECK</p><h2>打包前检查</h2><p>将模型交付给其他用户之前，用这份清单快速确认必要文件和设置。</p></div>
+        <div class="section-heading"><p class="section-number">06 · FINAL CHECK</p><h2 data-i18n="s06.heading">打包前检查</h2><p data-i18n="s06.intro">将模型交付给其他用户之前，用这份清单快速确认必要文件和设置。</p></div>
         <ul class="checklist">
-          <li><span>✓</span><div><strong>模型文件完整</strong><p><code>.model3.json</code>、纹理、物理和其他依赖文件位于同一模型目录。</p></div></li>
-          <li><span>✓</span><div><strong>设置已保存</strong><p>模型目录中包含最新的 <code>c4l_model_settings</code>。</p></div></li>
-          <li><span>✓</span><div><strong>参数可识别</strong><p>物理输入参数以大写 X / Y 或其后数字结尾。</p></div></li>
-          <li><span>✓</span><div><strong>锚点已验证</strong><p>按 <kbd>F</kbd> 测试，模型能以预期顶点对准指针尖端。</p></div></li>
-          <li><span>✓</span><div><strong>表情与动作可用</strong><p>逐个测试绑定、触发模式、淡入淡出和待机动画。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check1.title">模型文件完整</strong><p data-i18n="check1.body"><code>.model3.json</code>、纹理、物理和其他依赖文件位于同一模型目录。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check2.title">设置已保存</strong><p data-i18n="check2.body">模型目录中包含最新的 <code>c4l_model_settings</code>。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check3.title">参数可识别</strong><p data-i18n="check3.body">物理输入参数以大写 X / Y 或其后数字结尾。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check4.title">锚点已验证</strong><p data-i18n="check4.body">按 <kbd>F</kbd> 测试，模型能以预期顶点对准指针尖端。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check5.title">表情与动作可用</strong><p data-i18n="check5.body">逐个测试绑定、触发模式、淡入淡出和待机动画。</p></div></li>
         </ul>
       </section>
 
       <footer>
         <div><strong>Cursor for Live2D</strong><p>Manual for Modellers</p></div>
-        <a href="#top">返回顶部 ↑</a>
+        <a href="#top" data-i18n="footer.backToTop">返回顶部 ↑</a>
       </footer>
     </main>
   </div>
 
-  <dialog class="lightbox" id="lightbox" aria-label="图片预览">
-    <button type="button" aria-label="关闭图片预览">×</button>
+  <dialog class="lightbox" id="lightbox" aria-label="图片预览" data-i18n-aria-label="lightbox.ariaLabel">
+    <button type="button" aria-label="关闭图片预览" data-i18n-aria-label="lightbox.closeAriaLabel">×</button>
     <img alt="">
     <p></p>
   </dialog>
