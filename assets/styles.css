@@ -200,6 +200,17 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .shortcut-copy .callout { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), var(--bg) 8%); color: var(--bg); }
 .shortcut-copy .callout p { color: color-mix(in srgb, var(--bg), transparent 25%); }
 
+.project-download { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; gap: 18px; align-items: center; margin-top: 18px; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); text-decoration: none; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.project-download:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow); }
+.project-download:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 3px; }
+.project-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: var(--accent); color: #2c1c10; font-size: 22px; font-weight: 800; }
+.project-copy { display: grid; gap: 3px; }
+.project-copy strong { font-size: 17px; }
+.project-copy > span:last-child { color: var(--text-soft); font-size: 12px; }
+.project-files { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.project-files code { color: var(--text-soft); font-size: 10px; }
+.project-arrow { color: var(--accent-deep); font-size: 20px; }
+
 .timeline { margin-top: 54px; }
 .timeline-step { position: relative; display: grid; grid-template-columns: 64px 1fr; column-gap: 24px; padding-bottom: 76px; }
 .timeline-step::before { content: ""; position: absolute; top: 46px; bottom: 0; left: 23px; width: 1px; background: var(--line); }
@@ -300,6 +311,8 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
   .step-index { margin-bottom: 8px; }
   .step-card figure, .step-card .figure-pair { margin-top: 22px; }
   .figure-pair, .figure-pair.balanced { grid-template-columns: 1fr; }
+  .project-download { grid-template-columns: auto minmax(0, 1fr) auto; padding: 18px; }
+  .project-files { grid-column: 2 / -1; justify-content: flex-start; }
   .key-display { grid-template-columns: 160px minmax(0, 1fr); gap: 12px; }
   .detail-block { padding: 24px 18px; }
   .rule-row { grid-template-columns: 70px 1fr; gap: 8px; }

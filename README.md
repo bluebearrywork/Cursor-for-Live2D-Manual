@@ -9,6 +9,7 @@ A structured, responsive user manual for **Cursor for Live2D**, focused on Live2
 - Keyboard/mouse expression bindings
 - Application shortcuts
 - Interactive cursor model workflow
+- Downloadable Cubism, animation, and PSD reference files
 - Override and OBS background modes
 - Pre-delivery checklist
 
