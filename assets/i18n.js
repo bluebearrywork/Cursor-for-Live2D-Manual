@@ -40,8 +40,6 @@
 
       's00.heading': '开始之前',
       's00.intro': '本手册侧重 Live2D 模型制作与参数配置，并非 Live2D 入门教程。建议先掌握 Cubism 的参数、ArtMesh、顶点和表情导出等基础操作。',
-      's00.callout.title': '普通用户提示',
-      's00.callout.body': '如果只需要使用现成模型，可以优先查看应用的简洁介绍视频；本页更适合作为详细设置参考。',
       'route.ariaLabel': '阅读路线',
       'route.import': '<span>初次使用</span><strong>导入并保存模型设置 →</strong>',
       'route.settings': '<span>模型配置</span><strong>缩放、物理与锚点 →</strong>',
@@ -235,8 +233,6 @@
 
       's00.heading': 'Before You Start',
       's00.intro': 'This manual focuses on Live2D model creation and parameter configuration — it is not a Live2D beginner tutorial. You should already be comfortable with Cubism parameters, ArtMesh, vertices, and exporting expressions.',
-      's00.callout.title': 'Just a regular user?',
-      's00.callout.body': "If you only need to use a ready-made model, check the app's short intro video first; this page is better suited as a detailed setup reference.",
       'route.ariaLabel': 'Reading paths',
       'route.import': '<span>First time here</span><strong>Import and save model settings →</strong>',
       'route.settings': '<span>Model configuration</span><strong>Scale, physics, and anchor point →</strong>',
@@ -430,8 +426,6 @@
 
       's00.heading': 'はじめに',
       's00.intro': '本マニュアルは Live2D モデルの制作とパラメータ設定に焦点を当てており、Live2D の入門チュートリアルではありません。Cubism のパラメータ、ArtMesh、頂点、表情の書き出しなど、基本操作を先に習得しておくことをおすすめします。',
-      's00.callout.title': '一般ユーザーの方へ',
-      's00.callout.body': '既存のモデルを使うだけであれば、まずアプリの簡単な紹介動画をご覧ください。本ページは詳細な設定リファレンスとしての利用に適しています。',
       'route.ariaLabel': '読み進め方',
       'route.import': '<span>はじめての方</span><strong>モデル設定のインポートと保存 →</strong>',
       'route.settings': '<span>モデル構成</span><strong>スケール・物理演算・アンカーポイント →</strong>',
