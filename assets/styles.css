@@ -182,7 +182,7 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .expression-items article { display: grid; grid-template-columns: 36px 1fr; gap: 18px; padding: 4px 0 32px; border-bottom: 1px solid var(--line); margin-bottom: 30px; }
 .item-number { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-pale); color: var(--accent-deep); font-size: 10px; font-weight: 800; }
 .expression-items img { max-height: 130px; width: auto; margin-top: 18px; border-radius: 10px; }
-.mini-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 46px; }
+.mini-card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 46px; }
 .mini-card-grid article { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
 .mini-card-grid img { height: 84px; object-fit: contain; margin-bottom: 20px; }
 .mini-card-grid h3 { font-size: 15px; }
