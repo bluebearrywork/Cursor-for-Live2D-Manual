@@ -34,9 +34,6 @@
       'toc.tutorial': '<span>06</span>制作方法分享',
       'toc.qa': '<span>08</span>常见问题',
       'toc.checklist': '<span>07</span>打包前检查',
-      'sidebar.note.title': '适合谁？',
-      'sidebar.note.body': '面向已有 Live2D 基础、希望制作互动鼠标模型的模型师。',
-
       'hero.title': '让 Live2D 模型<br><em>跟随你的指针</em>',
 
       's00.heading': '开始之前',
@@ -244,9 +241,6 @@
       'toc.tutorial': '<span>06</span>Modelling Tutorial',
       'toc.qa': '<span>08</span>Q&amp;A',
       'toc.checklist': '<span>07</span>Pre-release Checklist',
-      'sidebar.note.title': 'Who is this for?',
-      'sidebar.note.body': 'For modellers who already know Live2D basics and want to build an interactive cursor model.',
-
       'hero.title': 'Make your Live2D model<br><em>follow your cursor</em>',
 
       's00.heading': 'Before You Start',
@@ -454,9 +448,6 @@
       'toc.tutorial': '<span>06</span>制作方法の紹介',
       'toc.qa': '<span>08</span>よくある質問',
       'toc.checklist': '<span>07</span>公開前チェック',
-      'sidebar.note.title': '対象読者',
-      'sidebar.note.body': 'Live2D の基礎を理解しており、インタラクティブなカーソルモデルを制作したいモデラー向けです。',
-
       'hero.title': 'Live2D モデルを<br><em>カーソルに追従させる</em>',
 
       's00.heading': 'はじめに',
