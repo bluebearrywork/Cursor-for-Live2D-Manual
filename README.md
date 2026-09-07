@@ -12,6 +12,7 @@ A structured, responsive user manual for **Cursor for Live2D**, focused on Live2
 - Downloadable Cubism, animation, and PSD reference files
 - Override and OBS background modes
 - Pre-delivery checklist
+- Frequently asked questions
 
 ## Local preview
 
