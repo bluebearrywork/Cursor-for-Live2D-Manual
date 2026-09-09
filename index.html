@@ -7,9 +7,9 @@
   <meta name="theme-color" content="#f59b52">
   <title data-i18n="meta.title">Cursor for Live2D · 模型师手册</title>
   <link rel="icon" href="assets/images/app-icon.ico">
-  <link rel="stylesheet" href="assets/styles.css?v=qa-navigation-fix">
-  <script src="assets/i18n.js?v=qa-navigation-fix" defer></script>
-  <script src="assets/app.js?v=qa-navigation-fix" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=physics-parameter-rule">
+  <script src="assets/i18n.js?v=physics-parameter-rule" defer></script>
+  <script src="assets/app.js?v=physics-parameter-rule" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip.link">跳到正文</a>
@@ -130,7 +130,7 @@
           <div class="detail-copy">
             <p class="mini-label" data-i18n="detail.label">参数识别规则</p>
             <h3 data-i18n="detail.title">正确命名 X / Y 轴输入参数</h3>
-            <p data-i18n="detail.body">软件会自动识别模型的横向和纵向物理输入。参数 ID 的末尾必须是大写 <code>X</code> 或 <code>Y</code>；其后也可以只包含数字。</p>
+            <p data-i18n="detail.body">软件会自动识别模型的横向和纵向物理输入，并将其对应到鼠标指针的上下左右移动。需要被自动识别的物理参数，其参数 ID 必须以大写 <code>X</code> 或 <code>Y</code> 结尾，且 <code>X/Y</code> 后面可以继续包含数字。不需要与鼠标指针移动关联的物理参数，则可以使用任意名称，不受此规则限制。</p>
           </div>
           <div class="rule-table" role="table" aria-label="参数命名示例" data-i18n-aria-label="rule.ariaLabel">
             <div class="rule-row rule-head" role="row"><span role="columnheader" data-i18n="rule.col.result">结果</span><span role="columnheader" data-i18n="rule.col.paramId">参数 ID</span><span role="columnheader" data-i18n="rule.col.reason">原因</span></div>
