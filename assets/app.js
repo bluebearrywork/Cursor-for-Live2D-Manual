@@ -38,7 +38,34 @@ menuButton.addEventListener('click', () => {
 });
 
 backdrop.addEventListener('click', closeMenu);
-tocLinks.forEach((link) => link.addEventListener('click', closeMenu));
+tocLinks.forEach((link) => {
+  link.addEventListener('click', async (event) => {
+    event.preventDefault();
+    closeMenu();
+
+    const target = document.querySelector(link.hash);
+    if (!target) return;
+
+    if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+    refreshLangSwitcher();
+
+    if (document.fonts?.ready) await document.fonts.ready;
+
+    let correctionTimer;
+    const correctScrollPosition = () => {
+      clearTimeout(correctionTimer);
+      window.removeEventListener('scrollend', correctScrollPosition);
+      requestAnimationFrame(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }));
+    };
+
+    window.addEventListener('scrollend', correctScrollPosition, { once: true });
+    correctionTimer = setTimeout(correctScrollPosition, 2000);
+    target.scrollIntoView({
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  });
+});
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMenu();
