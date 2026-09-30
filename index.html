@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cursor for Live2D 模型师使用手册：模型导入、锚点设置、系统鼠标状态参数、按键表情与互动鼠标模型制作教程。" data-i18n-content="meta.description">
+  <meta name="description" content="Cursor for Live2D 模型师使用手册：模型导入、锚点设置、按键表情、快捷键与互动鼠标模型制作教程。" data-i18n-content="meta.description">
   <meta name="theme-color" content="#f59b52">
   <title data-i18n="meta.title">Cursor for Live2D · 模型师手册</title>
   <link rel="icon" href="assets/images/app-icon.ico">
-  <link rel="stylesheet" href="assets/styles.css?v=cursor-states">
-  <script src="assets/i18n.js?v=cursor-states" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=cursor-terminology">
+  <script src="assets/i18n.js?v=cursor-terminology" defer></script>
   <script src="assets/app.js?v=cursor-terminology" defer></script>
 </head>
 <body>
@@ -45,13 +45,12 @@
           <a href="#overview" data-i18n="toc.overview"><span>00</span>开始之前</a>
           <a href="#import" data-i18n="toc.import"><span>01</span>导入模型</a>
           <a href="#settings" data-i18n="toc.settings"><span>02</span>模型设置</a>
-          <a href="#cursor-states" data-i18n="toc.cursorStates"><span>03</span>鼠标状态参数</a>
-          <a href="#expressions" data-i18n="toc.expressions"><span>04</span>按键表情</a>
-          <a href="#shortcuts" data-i18n="toc.shortcuts"><span>05</span>软件快捷键</a>
-          <a href="#display-modes" data-i18n="toc.displayModes"><span>06</span>显示模式</a>
-          <a href="#tutorial" data-i18n="toc.tutorial"><span>07</span>制作方法分享</a>
-          <a href="#checklist" data-i18n="toc.checklist"><span>08</span>打包前检查</a>
-          <a href="#qa" data-i18n="toc.qa"><span>09</span>常见问题</a>
+          <a href="#expressions" data-i18n="toc.expressions"><span>03</span>按键表情</a>
+          <a href="#shortcuts" data-i18n="toc.shortcuts"><span>04</span>软件快捷键</a>
+          <a href="#display-modes" data-i18n="toc.displayModes"><span>05</span>显示模式</a>
+          <a href="#tutorial" data-i18n="toc.tutorial"><span>06</span>制作方法分享</a>
+          <a href="#checklist" data-i18n="toc.checklist"><span>07</span>打包前检查</a>
+          <a href="#qa" data-i18n="toc.qa"><span>08</span>常见问题</a>
         </nav>
       </div>
     </aside>
@@ -79,7 +78,7 @@
         <div class="route-grid" aria-label="阅读路线" data-i18n-aria-label="route.ariaLabel">
           <a href="#import" data-i18n="route.import"><span>初次使用</span><strong>导入并保存模型设置 →</strong></a>
           <a href="#settings" data-i18n="route.settings"><span>模型配置</span><strong>缩放、物理与锚点 →</strong></a>
-          <a href="#cursor-states" data-i18n="route.cursorStates"><span>互动效果</span><strong>鼠标状态与滚轮参数 →</strong></a>
+          <a href="#expressions" data-i18n="route.expressions"><span>互动效果</span><strong>表情、动作与快捷键 →</strong></a>
           <a href="#tutorial" data-i18n="route.tutorial"><span>模型制作</span><strong>制作点击动作与跟踪点 →</strong></a>
         </div>
       </section>
@@ -153,81 +152,8 @@
         </article>
       </section>
 
-      <section class="manual-section" id="cursor-states">
-        <div class="section-heading">
-          <p class="section-number">03 · CURSOR STATES</p>
-          <h2 data-i18n="cursor.heading">系统鼠标状态参数</h2>
-          <p data-i18n="cursor.intro">让模型自动响应 Windows 当前显示的鼠标指针形状，例如移到文字、链接或窗口边缘时切换姿态。应用会直接驱动模型参数，不需要制作 <code>.exp3.json</code>，也不需要绑定快捷键。</p>
-        </div>
-
-        <div class="callout info">
-          <span class="callout-icon" aria-hidden="true">i</span>
-          <div><strong data-i18n="cursor.explainer.title">这里的“状态”不是鼠标按键</strong><p data-i18n="cursor.explainer.body">本节参数识别的是系统指针的外观。左键、右键等点击动作仍请使用下一节的“按键表情”制作。</p></div>
-        </div>
-
-        <div class="state-setup" aria-label="鼠标状态参数制作步骤" data-i18n-aria-label="cursor.setup.ariaLabel">
-          <article>
-            <span class="item-number">01</span>
-            <div><h3 data-i18n="cursor.step1.title">创建需要的参数</h3><p data-i18n="cursor.step1.body">在 Cubism 中只创建模型实际会用到的状态参数，并从下表复制参数 ID。ID 区分大小写，必须完全一致。</p></div>
-          </article>
-          <article>
-            <span class="item-number">02</span>
-            <div><h3 data-i18n="cursor.step2.title">制作默认与触发关键形</h3><p data-i18n="cursor.step2.body">推荐设为 <code>Minimum=0</code>、<code>Default=0</code>、<code>Maximum=1</code>：在 <code>0</code> 制作普通状态，在 <code>1</code> 制作触发后的效果。</p></div>
-          </article>
-          <article>
-            <span class="item-number">03</span>
-            <div><h3 data-i18n="cursor.step3.title">导出并重新加载模型</h3><p data-i18n="cursor.step3.body">参数必须随 <code>.moc3</code> 导出。重新加载模型后，在“模型设置 → 鼠标状态参数”中看到“自动”即表示已经连接。</p></div>
-          </article>
-        </div>
-
-        <div class="parameter-catalog">
-          <article class="parameter-group">
-            <p class="mini-label" data-i18n="cursor.common.label">常用状态</p>
-            <h3 data-i18n="cursor.common.title">指针内容与操作状态</h3>
-            <dl class="parameter-list">
-              <div><dt><code>CURSOR_BUSY</code></dt><dd data-i18n="cursor.state.busy">等待或后台处理中</dd></div>
-              <div><dt><code>CURSOR_TEXT</code></dt><dd data-i18n="cursor.state.text">文字输入光标</dd></div>
-              <div><dt><code>CURSOR_LINK</code></dt><dd data-i18n="cursor.state.link">链接手形光标</dd></div>
-              <div><dt><code>CURSOR_PRECISION</code></dt><dd data-i18n="cursor.state.precision">十字精确选择</dd></div>
-              <div><dt><code>CURSOR_MOVE</code></dt><dd data-i18n="cursor.state.move">四向移动</dd></div>
-              <div><dt><code>CURSOR_UNAVAILABLE</code></dt><dd data-i18n="cursor.state.unavailable">禁止操作</dd></div>
-              <div><dt><code>CURSOR_HELP</code></dt><dd data-i18n="cursor.state.help">帮助选择</dd></div>
-            </dl>
-          </article>
-
-          <article class="parameter-group">
-            <p class="mini-label" data-i18n="cursor.resize.label">窗口边缘</p>
-            <h3 data-i18n="cursor.resize.title">缩放状态</h3>
-            <dl class="parameter-list">
-              <div><dt><code>CURSOR_RESIZE_EW</code></dt><dd data-i18n="cursor.state.resizeEw">左右缩放</dd></div>
-              <div><dt><code>CURSOR_RESIZE_NS</code></dt><dd data-i18n="cursor.state.resizeNs">上下缩放</dd></div>
-              <div><dt><code>CURSOR_RESIZE_NWSE</code></dt><dd data-i18n="cursor.state.resizeNwse">左上 ↔ 右下缩放</dd></div>
-              <div><dt><code>CURSOR_RESIZE_NESW</code></dt><dd data-i18n="cursor.state.resizeNesw">右上 ↔ 左下缩放</dd></div>
-            </dl>
-            <div class="normal-state-note"><strong data-i18n="cursor.normal.title">普通箭头不需要参数</strong><p data-i18n="cursor.normal.body">没有 <code>CURSOR_NORMAL</code>。恢复普通箭头、隐藏指针或遇到无法识别的自定义指针时，所有状态参数都会回到各自的 Default。</p></div>
-          </article>
-        </div>
-
-        <article class="wheel-guide">
-          <div>
-            <p class="mini-label" data-i18n="cursor.wheel.label">滚轮输入</p>
-            <h3 data-i18n="cursor.wheel.title">制作向上与向下滚动状态</h3>
-            <p data-i18n="cursor.wheel.body">创建 <code>WHEEL_UP</code> 和 / 或 <code>WHEEL_DOWN</code>。滚动时，对应参数会从 Default 切到 Maximum，并保持约 <code>250 ms</code> 后自动恢复；连续滚动会重新计时，反向滚动会立即切换方向。</p>
-          </div>
-          <div class="wheel-physics-note">
-            <strong data-i18n="cursor.physics.title">需要滚轮带动物理？</strong>
-            <p data-i18n="cursor.physics.body">将物理根输入参数 ID 命名为大写 <code>Z</code> 结尾，或 <code>Z</code> 后只接数字，例如 <code>ParamWheelZ</code>、<code>ParamScrollZ2</code>，并确保它已加入 <code>physics3.json</code> 的输入。使用时还需开启鼠标跟随与拖拽物理；小写 <code>z</code> 不会被识别。</p>
-          </div>
-        </article>
-
-        <div class="callout warning cursor-compatibility">
-          <span class="callout-icon" aria-hidden="true">!</span>
-          <div><strong data-i18n="cursor.compat.title">命名与旧模型兼容</strong><p data-i18n="cursor.compat.body">新模型请优先使用上面的固定 ID，不要另做写入这些参数的表情。旧模型仍兼容 <code>C4L_</code> 前缀，例如 <code>C4L_CURSOR_LINK</code>；如果现有参数无法改名，可在“鼠标状态参数”中为未自动匹配的状态选择模型参数，再点击“保存模型设置”。固定 ID 自动匹配成功时会优先使用自动连接。</p></div>
-        </div>
-      </section>
-
       <section class="manual-section" id="expressions">
-        <div class="section-heading"><p class="section-number">04 · EXPRESSIONS</p><h2 data-i18n="s03.heading">按键表情</h2><p data-i18n="s03.intro">先在 Live2D Viewer 中完成表情设置，将表情导出为 <code>exp3.json</code> 文件并放入模型文件夹。绑定页面会自动读取模型中的全部表情文件。</p></div>
+        <div class="section-heading"><p class="section-number">03 · EXPRESSIONS</p><h2 data-i18n="s03.heading">按键表情</h2><p data-i18n="s03.intro">先在 Live2D Viewer 中完成表情设置，将表情导出为 <code>exp3.json</code> 文件并放入模型文件夹。绑定页面会自动读取模型中的全部表情文件。</p></div>
         <div class="callout info expression-reference">
           <span class="callout-icon" aria-hidden="true">i</span>
           <div><strong data-i18n="expr.ref.title">如何制作并导出表情？</strong><p data-i18n="expr.ref.body">具体步骤请参考 Live2D Cubism 官方手册中的<a class="text-link" href="https://docs.live2d.com/zh-CHS/cubism-editor-manual/setting-and-exporting-facial-expressions/" target="_blank" rel="noreferrer">“创建和导出表情”说明 ↗</a>。</p></div>
@@ -248,7 +174,7 @@
       </section>
 
       <section class="manual-section" id="shortcuts">
-        <div class="section-heading"><p class="section-number">05 · SHORTCUTS</p><h2 data-i18n="s04.heading">软件快捷键</h2><p data-i18n="s04.intro">左键点击快捷键按钮后，按下新的组合键即可更改默认设置。快捷键配置可以单独保存，便于迁移或备份。</p></div>
+        <div class="section-heading"><p class="section-number">04 · SHORTCUTS</p><h2 data-i18n="s04.heading">软件快捷键</h2><p data-i18n="s04.intro">左键点击快捷键按钮后，按下新的组合键即可更改默认设置。快捷键配置可以单独保存，便于迁移或备份。</p></div>
         <div class="shortcut-card">
           <figure class="image-frame dark-frame"><img src="assets/images/image18.png" alt="快捷键设置窗口" data-i18n-alt="shortcut.figAlt" width="352" height="331" loading="lazy"><figcaption data-i18n="shortcut.figCaption">快捷键设置可保存为独立文件</figcaption></figure>
           <div class="shortcut-copy"><p class="mini-label" data-i18n="shortcut.label">核心快捷键</p><div class="key-list"><div class="key-display"><kbd>F</kbd><span data-i18n="shortcut.key1">开始模型跟踪</span></div><div class="key-display key-combo"><div><kbd>Ctrl</kbd><b>+</b><kbd>Shift</kbd><b>+</b><kbd>A</kbd></div><span data-i18n="shortcut.key2">覆盖模式</span></div></div><div class="callout compact"><span class="callout-icon" aria-hidden="true">✓</span><div><strong data-i18n="shortcut.tip.title">建议先测试</strong><p data-i18n="shortcut.tip.body">保存前确认快捷键没有与常用软件或系统热键冲突。</p></div></div></div>
@@ -257,7 +183,7 @@
 
       <section class="manual-section" id="display-modes">
         <div class="section-heading">
-          <p class="section-number">06 · DISPLAY MODES</p>
+          <p class="section-number">05 · DISPLAY MODES</p>
           <h2 data-i18n="modes.heading">覆盖模式与背景模式</h2>
           <p data-i18n="modes.intro">两种显示模式适用于不同场景：覆盖模式让模型直接显示在桌面最上层，背景模式则便于通过 OBS 捕捉模型画面。</p>
         </div>
@@ -286,7 +212,7 @@
       </section>
 
       <section class="manual-section tutorial-section" id="tutorial">
-        <div class="section-heading"><p class="section-number">07 · MODELLER TUTORIAL</p><h2 data-i18n="s05.heading">互动鼠标模型制作方法</h2><p data-i18n="s05.intro">以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
+        <div class="section-heading"><p class="section-number">06 · MODELLER TUTORIAL</p><h2 data-i18n="s05.heading">互动鼠标模型制作方法</h2><p data-i18n="s05.intro">以下流程分享一种互动鼠标模型的制作思路，重点是让锚点在点击动作前后保持正确的位置。</p></div>
         <div class="callout warning"><span class="callout-icon" aria-hidden="true">!</span><div><strong data-i18n="warning.title">需要 Live2D 制作基础</strong><p data-i18n="warning.body">本节是与 Cursor for Live2D 相关的制作经验分享，不覆盖 Cubism 的基础建模操作。</p></div></div>
         <div class="project-download">
           <span class="project-icon" aria-hidden="true">↓</span>
@@ -327,12 +253,11 @@
       </section>
 
       <section class="manual-section" id="checklist">
-        <div class="section-heading"><p class="section-number">08 · FINAL CHECK</p><h2 data-i18n="s06.heading">打包前检查</h2><p data-i18n="s06.intro">将模型交付给其他用户之前，用这份清单快速确认必要文件和设置。</p></div>
+        <div class="section-heading"><p class="section-number">07 · FINAL CHECK</p><h2 data-i18n="s06.heading">打包前检查</h2><p data-i18n="s06.intro">将模型交付给其他用户之前，用这份清单快速确认必要文件和设置。</p></div>
         <ul class="checklist">
           <li><span>✓</span><div><strong data-i18n="check1.title">模型文件完整</strong><p data-i18n="check1.body"><code>.model3.json</code>、纹理、物理和其他依赖文件位于同一模型目录。</p></div></li>
           <li><span>✓</span><div><strong data-i18n="check2.title">设置已保存</strong><p data-i18n="check2.body">模型目录中包含最新的 <code>c4l_model_settings</code>。</p></div></li>
-          <li><span>✓</span><div><strong data-i18n="check3.title">物理参数可识别</strong><p data-i18n="check3.body">鼠标移动输入以大写 X / Y 结尾，滚轮输入使用大写 Z；轴字母后如有内容，只能是数字。</p></div></li>
-          <li><span>✓</span><div><strong data-i18n="check6.title">状态参数已验证</strong><p data-i18n="check6.body"><code>CURSOR_*</code> 与 <code>WHEEL_*</code> 的 ID 大小写正确，并能从 Default 切换到 Maximum。</p></div></li>
+          <li><span>✓</span><div><strong data-i18n="check3.title">参数可识别</strong><p data-i18n="check3.body">物理输入参数以大写 X / Y 或其后数字结尾。</p></div></li>
           <li><span>✓</span><div><strong data-i18n="check4.title">锚点已验证</strong><p data-i18n="check4.body">按 <kbd>F</kbd> 测试，模型能以预期顶点对准指针尖端。</p></div></li>
           <li><span>✓</span><div><strong data-i18n="check5.title">表情与动作可用</strong><p data-i18n="check5.body">逐个测试绑定、触发模式、淡入淡出和待机动画。</p></div></li>
         </ul>
@@ -340,7 +265,7 @@
 
       <section class="manual-section" id="qa">
         <div class="section-heading">
-          <p class="section-number">09 · Q&amp;A</p>
+          <p class="section-number">08 · Q&amp;A</p>
           <h2 data-i18n="qa.heading">常见问题</h2>
           <p data-i18n="qa.intro">关于 Live2D 模型、模型获取方式及软件功能的常见问题。</p>
         </div>

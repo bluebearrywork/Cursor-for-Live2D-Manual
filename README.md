@@ -6,7 +6,6 @@ A structured, responsive user manual for **Cursor for Live2D**, focused on Live2
 
 - Model importing and settings migration
 - Scale, physics gain, and anchor configuration
-- Windows cursor-state and mouse-wheel parameter naming
 - Keyboard/mouse expression bindings
 - Application shortcuts
 - Interactive cursor model workflow
