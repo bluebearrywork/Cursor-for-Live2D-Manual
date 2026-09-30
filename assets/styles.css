@@ -184,6 +184,28 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .mini-card-grid img { height: 84px; object-fit: contain; margin-bottom: 20px; }
 .mini-card-grid h3 { font-size: 15px; }
 .mini-card-grid p { font-size: 12px; }
+.state-setup { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.state-setup article { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); }
+.state-setup h3 { margin: 3px 0 8px; font-size: 16px; line-height: 1.4; }
+.state-setup p { margin: 0; color: var(--text-soft); font-size: 12px; line-height: 1.7; }
+.parameter-catalog { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+.parameter-group { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--surface); }
+.parameter-group h3 { margin: 7px 0 18px; font-size: 22px; line-height: 1.4; }
+.parameter-list { margin: 0; }
+.parameter-list > div { display: grid; grid-template-columns: minmax(190px, 1fr) 1fr; gap: 16px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); }
+.parameter-list dt, .parameter-list dd { margin: 0; }
+.parameter-list dd { color: var(--text-soft); font-size: 12px; }
+.parameter-list code { white-space: nowrap; }
+.normal-state-note { margin-top: 20px; padding: 16px; border-radius: 12px; background: var(--surface-soft); }
+.normal-state-note strong, .wheel-physics-note strong { font-size: 13px; }
+.normal-state-note p, .wheel-physics-note p { margin: 4px 0 0; color: var(--text-soft); font-size: 12px; line-height: 1.7; }
+.wheel-guide { display: grid; grid-template-columns: 1.1fr .9fr; gap: 42px; align-items: center; margin-top: 18px; padding: 34px; border-radius: var(--radius-lg); background: var(--surface-strong); color: var(--bg); }
+.wheel-guide h3 { margin: 8px 0 10px; font-size: 25px; line-height: 1.4; letter-spacing: -.02em; }
+.wheel-guide > div:first-child > p:last-child { color: color-mix(in srgb, var(--bg), transparent 22%); }
+.wheel-physics-note { padding: 20px; border: 1px solid color-mix(in srgb, var(--bg), transparent 82%); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface-strong), var(--bg) 8%); }
+.wheel-physics-note p { color: color-mix(in srgb, var(--bg), transparent 25%); }
+.wheel-guide code { border-color: color-mix(in srgb, var(--bg), transparent 75%); background: transparent; color: inherit; }
+.cursor-compatibility { margin-top: 18px; }
 .shortcut-card { display: grid; grid-template-columns: minmax(280px, .9fr) 1.1fr; gap: 50px; align-items: center; padding: 42px; border-radius: var(--radius-lg); background: var(--surface-strong); color: var(--bg); }
 .dark-frame { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), #000 12%); }
 .shortcut-copy .mini-label { color: var(--accent); }
@@ -273,6 +295,7 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
   .hero-visual { min-height: 430px; width: min(100%, 720px); }
   .step-card { grid-template-columns: 42px 1fr; }
   .step-card figure, .step-card .figure-pair { grid-column: 2; }
+  .state-setup, .parameter-catalog, .wheel-guide { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 800px) {
@@ -292,9 +315,9 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
   .hero-visual { min-height: 330px; }
   .manual-section, footer { width: min(100% - 40px, 680px); }
   .manual-section { padding: 80px 0; }
-  .route-grid, .feature-grid, .mini-card-grid, .mode-grid, .checklist { grid-template-columns: 1fr; }
+  .route-grid, .feature-grid, .mini-card-grid, .state-setup, .parameter-catalog, .mode-grid, .checklist { grid-template-columns: 1fr; }
   .step-card { grid-template-columns: 34px 1fr; padding: 22px; }
-  .anchor-guide, .shortcut-card, .obs-guide { grid-template-columns: 1fr; padding: 28px; }
+  .anchor-guide, .shortcut-card, .wheel-guide, .obs-guide { grid-template-columns: 1fr; padding: 28px; }
   .expression-layout { grid-template-columns: 1fr; }
   .phone-figure { position: static; width: min(100%, 400px); margin: auto; }
   .tutorial-gallery { grid-template-columns: repeat(2, 1fr); }
@@ -329,6 +352,9 @@ footer a { color: var(--accent-deep); font-weight: 700; text-decoration: none; }
   .rule-row { grid-template-columns: 70px 1fr; gap: 8px; }
   .rule-row > span:last-child { grid-column: 2; color: color-mix(in srgb, var(--bg), transparent 40%); }
   .rule-head > span:last-child { display: none; }
+  .state-setup article, .parameter-group { padding: 20px 18px; }
+  .parameter-list > div { grid-template-columns: 1fr; gap: 5px; }
+  .wheel-guide { padding: 24px 18px; }
   .anchor-guide, .shortcut-card, .obs-guide { padding: 22px 18px; }
   .timeline-step { grid-template-columns: 44px 1fr; gap: 12px; }
   .timeline-marker span { width: 36px; height: 36px; }
