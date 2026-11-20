@@ -196,10 +196,6 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .parameter-list dt, .parameter-list dd { margin: 0; }
 .parameter-list dd { color: var(--text-soft); font-size: 12px; }
 .parameter-list code { white-space: nowrap; }
-.cursor-guide { margin-top: 18px; }
-.cursor-guide > p:not(.mini-label), .cursor-guide li { color: var(--text-soft); font-size: 13px; line-height: 1.8; }
-.cursor-guide ol { display: grid; gap: 12px; margin: 18px 0 0; padding-left: 22px; }
-.cursor-guide li::marker { color: var(--accent-deep); font-weight: 700; }
 .normal-state-note { margin-top: 20px; padding: 16px; border-radius: 12px; background: var(--surface-soft); }
 .normal-state-note strong, .wheel-physics-note strong { font-size: 13px; }
 .normal-state-note p, .wheel-physics-note p { margin: 4px 0 0; color: var(--text-soft); font-size: 12px; line-height: 1.7; }
@@ -209,7 +205,6 @@ figcaption { margin-top: 8px; color: var(--text-soft); font-size: 10px; line-hei
 .wheel-physics-note { padding: 20px; border: 1px solid color-mix(in srgb, var(--bg), transparent 82%); border-radius: var(--radius-md); background: color-mix(in srgb, var(--surface-strong), var(--bg) 8%); }
 .wheel-physics-note p { color: color-mix(in srgb, var(--bg), transparent 25%); }
 .wheel-guide code { border-color: color-mix(in srgb, var(--bg), transparent 75%); background: transparent; color: inherit; }
-.cursor-compatibility { margin-top: 18px; }
 .shortcut-card { display: grid; grid-template-columns: minmax(280px, .9fr) 1.1fr; gap: 50px; align-items: center; padding: 42px; border-radius: var(--radius-lg); background: var(--surface-strong); color: var(--bg); }
 .dark-frame { border-color: color-mix(in srgb, var(--bg), transparent 82%); background: color-mix(in srgb, var(--surface-strong), #000 12%); }
 .shortcut-copy .mini-label { color: var(--accent); }

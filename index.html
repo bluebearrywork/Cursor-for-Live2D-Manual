@@ -225,40 +225,6 @@
           </div>
         </article>
 
-        <article class="parameter-group cursor-guide">
-          <p class="mini-label" data-i18n="cursor.rigging.label">Cubism · 关键形制作</p>
-          <h3 data-i18n="cursor.rigging.title">示例：给链接状态制作抬爪效果</h3>
-          <p data-i18n="cursor.rigging.intro">以 <code>CURSOR_LINK</code> 为例，其他状态也采用同样的方法。这里制作的是模型参数的关键形，不是动画时间轴中的关键帧。</p>
-          <ol>
-            <li data-i18n="cursor.rigging.step1">选中要变化的 ArtMesh 或变形器，给 <code>CURSOR_LINK</code> 添加 <code>0</code> 和 <code>1</code> 两个关键形。制作时让其他光标状态参数保持默认值。</li>
-            <li data-i18n="cursor.rigging.step2">在 <code>0</code> 记录正常姿态；若添加了链接提示图层，将其不透明度设为 <code>0</code>。这是离开链接后恢复的样子，不要只制作触发端。</li>
-            <li data-i18n="cursor.rigging.step3">在 <code>1</code> 制作抬爪、高亮或提示图层可见的效果。用参数滑块检查两端，再为其他需要的状态分别制作；若多个参数修改同一部件，完成后重新检查默认姿态和各个状态。</li>
-          </ol>
-        </article>
-
-        <article class="parameter-group cursor-guide">
-          <p class="mini-label" data-i18n="cursor.animation.label">动画行为</p>
-          <h3 data-i18n="cursor.animation.title">姿态切换与循环动画要分开制作</h3>
-          <p data-i18n="cursor.animation.switching">状态触发时直接从 Default 切到 Maximum，并在该状态持续期间保持，不会自动扫过 <code>0 → 0.5 → 1</code>，也不使用按键表情的淡入淡出设置。给文件命名为 <code>CURSOR_BUSY.motion3.json</code> 或 <code>CURSOR_BUSY.exp3.json</code>，不会让它按忙碌状态自动播放。</p>
-          <p data-i18n="cursor.animation.loop">需要“忙碌时持续晃动”的效果时，可用 <code>CURSOR_BUSY</code> 控制装饰图层是否显示（<code>0</code> 隐藏、<code>1</code> 显示），再用独立参数，例如 <code>ParamBusyLoop</code>，在通用待机动画中制作循环。导出 <code>.motion3.json</code> 后，用户还需在“表情快捷键”页选择并开启待机动画；这不是按状态切换动画文件。</p>
-          <p data-i18n="cursor.animation.safety">状态参数专用于状态开关：不要把它写入待机动画或鼠标点击表情，也不要将它设为物理输出。鼠标点击和待机动作使用独立参数。应用会在动作与表情之后写入已连接的状态值；任何包含这些参数的旧 <code>.exp3.json</code> 都会被视为保留状态表情，从表情快捷键列表隐藏，不能靠改文件名恢复。</p>
-        </article>
-
-        <div class="callout warning cursor-compatibility">
-          <span class="callout-icon" aria-hidden="true">!</span>
-          <div><strong data-i18n="cursor.compat.title">命名与旧模型兼容</strong><p data-i18n="cursor.compat.body">新模型推荐上面的精确 ID。旧模型仍支持 <code>C4L_CURSOR_LINK</code>、<code>C4L_WHEEL_UP</code> 等 <code>C4L_</code> 别名。现有参数不便改名时，可在“鼠标状态”页下拉框中选择真实 Parameter ID 来手动连接，即使模型已有标准 ID，也以手动选择为准。选“自动连接”恢复命名匹配，选“无”关闭该状态。改绑立即生效，但需点击底部“保存模型设置”才会在重启后保留。</p></div>
-        </div>
-
-        <article class="parameter-group cursor-guide">
-          <p class="mini-label" data-i18n="cursor.testing.label">导出后验证</p>
-          <h3 data-i18n="cursor.testing.title">先预览，再测试实际光标</h3>
-          <ol>
-            <li data-i18n="cursor.testing.step1">重新加载导出的模型，打开“表情与状态 → 鼠标状态”。确认需要的状态已连接；若显示“参数丢失”或找不到 ID，检查参数 ID 与 <code>.moc3</code> 导出内容，而不是表情文件名。</li>
-            <li data-i18n="cursor.testing.step2">结束锚点编辑后，逐行点击播放按钮。光标状态预览约 <code>1.2 秒</code>，滚轮预览约 <code>250 ms</code>，随后恢复实时输入。预览不会改变系统指针或向其他应用发送滚轮事件，也不会触发滚轮物理。</li>
-            <li data-i18n="cursor.testing.step3">把指针移到文字、链接和窗口四种缩放边缘，检查对应姿态，再移回普通箭头确认恢复默认。滚轮上下分别测试一次，并在链接或文字状态下滚动，确认两种效果能同时正确显示。自定义指针未被识别时恢复普通姿态属于预期行为。</li>
-            <li data-i18n="cursor.testing.step4">同时测试鼠标点击表情、待机动画和跟踪锚点，确认姿态组合没有错位或互相覆盖。保存模型设置并重启应用确认连接保留，再将完整模型目录交付。</li>
-          </ol>
-        </article>
       </section>
 
       <section class="manual-section" id="expressions">
